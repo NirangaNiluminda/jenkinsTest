@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -7,6 +6,16 @@ pipeline {
             steps {
                 script {
                     echo 'Hello, World'
+                }
+            }
+        }
+
+        // New stage to run the hello.py file
+        stage('Run hello.py') {
+            steps {
+                script {
+                    // Running the hello.py file
+                    sh 'python3 hello.py'
                 }
             }
         }
