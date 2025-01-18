@@ -9,14 +9,9 @@ pipeline {
                 }
             }
         }
-
-        // New stage to run the hello.py file
         stage('Run hello.py') {
             steps {
-                script {
-                    // Running the hello.py file
-                    sh 'python3 hello_word.py'
-                }
+                bat 'python hello_word.py'
             }
         }
     }
